@@ -44,12 +44,15 @@ def MAKE_DIRs(N, th_start, th_end, d_th, phi_start, phi_end, d_phi):
 
 
 if __name__ == "__main__":
+    # Number of atoms
     N = 16
     
+    # Angle Theta
     th_start = 0
     th_end   = 100
     d_th     = 10
     
+    # Angle Phi
     phi_start = 0
     phi_end   = 0
     d_phi     = 5
