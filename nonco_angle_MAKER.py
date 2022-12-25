@@ -16,7 +16,7 @@ def MAKE_FILE(path, N, th, phi):
     for i in range(N):
         
         f.write(f"  {th:.15f}E+000  {PHI:.15f}E+000  F\n")
-        PHI+=(phi/16)*360
+        PHI+=(phi/N)*360
     
     f.close()
 
