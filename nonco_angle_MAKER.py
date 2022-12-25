@@ -31,7 +31,7 @@ def MAKE_DIRs(N, th_start, th_end, d_th, phi_start, phi_end, d_phi):
             # Path
             path = os.path.join(parent_dir, directory)
             
-            # Normalized Path for Windows or Linux
+            # Normalized Path to be OS agnostic
             PATH = os.path.normpath(path)
             
             try: 
