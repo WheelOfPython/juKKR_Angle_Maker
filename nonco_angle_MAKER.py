@@ -10,9 +10,13 @@ def MAKE_FILE(path, N, th, phi):
         f = open(PATH, "w")  
     except OSError as error: 
         print(error)
+        
+    PHI=0
     
     for i in range(N):
-        f.write(f"  {th:.15f}E+000  {phi:.15f}E+000  F\n")
+        
+        f.write(f"  {th:.15f}E+000  {PHI:.15f}E+000  F\n")
+        PHI+=(phi/16)*360
     
     f.close()
 
@@ -23,7 +27,7 @@ def MAKE_DIRs(N, th_start, th_end, d_th, phi_start, phi_end, d_phi):
         for phi in np.arange(phi_start, phi_end + d_phi, d_phi):
             
             # File name
-            directory = f"th_{th:03d}_phi_{phi:03d}"
+            directory = f"th_{th:03d}_phi_{phi}_{N}"
               
             # Parent Directory path
             parent_dir = os.getcwd()
@@ -48,14 +52,14 @@ if __name__ == "__main__":
     N = 16
     
     # Angle Theta
-    th_start = 0
-    th_end   = 100
+    th_start = 30
+    th_end   = 30
     d_th     = 10
     
     # Angle Phi
     phi_start = 0
-    phi_end   = 0
-    d_phi     = 5
+    phi_end   = 15
+    d_phi     = 1
     
     MAKE_DIRs(N, th_start, th_end, d_th, phi_start, phi_end, d_phi)
 
